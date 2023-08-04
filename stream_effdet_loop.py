@@ -56,7 +56,7 @@ while True:
                 #Convert img to RGB
                 #rgb = cv2.cvtColor(inp, cv2.COLOR_BGR2RGB)
                 rgb = inp
-                #img_boxes = inp
+                img_boxes = inp
 
                 #Is optional but i recommend (float convertion and convert img to tensor image)
                 rgb_tensor = tf.convert_to_tensor(rgb, dtype=tf.uint8)
@@ -99,8 +99,8 @@ while True:
                 diff=t2-t1
                 d = diff.total_seconds()/(60)
                 print("processed frame", frameid, "at fps", int(1/d))
-                #cv2.imshow('PreviewWindow', outp)
-                #print('Showing preview. Click on preview window or press any key to stop.')
+                cv2.imshow('PreviewWindow', outp)
+                print('Showing preview. Click on preview window or press any key to stop.')
             else:
                 break
 
