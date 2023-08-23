@@ -29,21 +29,21 @@ ts = time.time()
 #Load stream
 cap = cv2.VideoCapture("https://stage-ams.srv.axds.co/stream/adaptive/noaa/tmmc_prls/hls.m3u8")
 
-try:
-    if not os.path.exists('outputVideos'):
-        os.makedirs('outputVideos')
+# try:
+#     if not os.path.exists('outputVideos'):
+#         os.makedirs('outputVideos')
 
-# if not created then raise error
-except OSError:
-    print('Error: Creating directory of outputVideos')
+# # if not created then raise error
+# except OSError:
+#     print('Error: Creating directory of outputVideos')
 
 
 frameid = 0
 ret, frame = cap.read()
 
-dest = "outputVideos/" + str(ts) + ".avi"
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter(dest, fourcc, 20.0, (1024, 600))
+# dest = "outputVideos/" + str(ts) + ".avi"
+# fourcc = cv2.VideoWriter_fourcc(*'XVID')
+# out = cv2.VideoWriter(dest, fourcc, 20.0, (1024, 600))
 
 
 while cv2.waitKey(1) == -1:
@@ -93,10 +93,10 @@ while cv2.waitKey(1) == -1:
         
         outp = cv2.resize(img_boxes, (1024, 600))
         frameid += 1
-        out.write(outp)
+        # out.write(outp)
         t2 = datetime.datetime.now()
         diff=t2-t1
-        d = diff.total_seconds()/(60)
+        d = diff.total_seconds()
         print("processed frame", frameid, "at fps", int(1/d))
         cv2.imshow('PreviewWindow', outp)
         print('Showing preview. Click on preview window or press any key to stop.')
@@ -104,5 +104,5 @@ while cv2.waitKey(1) == -1:
         break
 
 cap.release()
-out.release()
+# out.release()
 cv2.destroyAllWindows()
