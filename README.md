@@ -34,5 +34,8 @@ Install the required dependencies
 
 Run the program (infinite loop) using the following command
 
-```python stream_yolov8_loop```
+```python stream_yolov8```
 
+or (infinite loop)
+
+```python stream_yolov8_loop```
