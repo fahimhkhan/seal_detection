@@ -20,13 +20,13 @@ detector = tf.saved_model.load("saved_model/2")
 width = 768
 height = 768
 
-try:
-    if not os.path.exists('/data/outputVideos'):
-        os.makedirs('/data/outputVideos')
+# try:
+#     if not os.path.exists('/data/outputVideos'):
+#         os.makedirs('/data/outputVideos')
 
-# if not created then raise error
-except OSError:
-    print('Error: Creating directory of outputVideos')
+# # if not created then raise error
+# except OSError:
+#     print('Error: Creating directory of outputVideos')
 
 # detector = tf.saved_model.load("saved_model/3")
 # width = 896
@@ -42,9 +42,9 @@ while True:
         frameid = 0
         ret, frame = cap.read()
 
-        dest = "/data/outputVideos/" + str(ts) + ".avi"
-        fourcc = cv2.VideoWriter_fourcc(*'XVID')
-        out = cv2.VideoWriter(dest, fourcc, 20.0, (1024, 600))
+        # dest = "/data/outputVideos/" + str(ts) + ".avi"
+        # fourcc = cv2.VideoWriter_fourcc(*'XVID')
+        # out = cv2.VideoWriter(dest, fourcc, 20.0, (1024, 600))
 
 
         while cv2.waitKey(1) == -1:
@@ -94,7 +94,7 @@ while True:
                 
                 outp = cv2.resize(img_boxes, (1024, 600))
                 frameid += 1
-                out.write(outp)
+                # out.write(outp)
                 t2 = datetime.datetime.now()
                 diff=t2-t1
                 d = diff.total_seconds()/(60)
@@ -105,7 +105,7 @@ while True:
                 break
 
         cap.release()
-        out.release()
+        # out.release()
         cv2.destroyAllWindows()
     except:
         pass
