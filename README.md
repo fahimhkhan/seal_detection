@@ -8,27 +8,31 @@ Activate the virtual environment using the following command.
 
 ```conda activate seal_det```
 
-## For detection using EfficientDet model
+### For detection using EfficientDet models
 
 Install the required dependencies
 
 ```pip install -r requirements_tf.txt```
 
-Run the program using the following command
+Run the program using one of the following command
 
 ```python stream_effdet2.py```
+
 or
+
 ```python stream_effdet3.py```
-or
+
+or (infinite loop)
+
 ```python stream_effdet_loop.py```
 
-## For detection using YOLOv8 model
+### For detection using YOLOv8 model
 
 Install the required dependencies
 
 ```pip install -r requirements_pt.txt```
 
-Run the program using the following command
+Run the program (infinite loop) using the following command
 
 ```python stream_yolov8_loop```
 
