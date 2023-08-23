@@ -20,6 +20,10 @@ detector = tf.saved_model.load("saved_model/2")
 width = 768
 height = 768
 
+# detector = tf.saved_model.load("saved_model/3")
+# width = 896
+# height = 896
+
 # try:
 #     if not os.path.exists('/data/outputVideos'):
 #         os.makedirs('/data/outputVideos')
@@ -27,10 +31,6 @@ height = 768
 # # if not created then raise error
 # except OSError:
 #     print('Error: Creating directory of outputVideos')
-
-# detector = tf.saved_model.load("saved_model/3")
-# width = 896
-# height = 896
 
 while True:
     try:
@@ -97,7 +97,7 @@ while True:
                 # out.write(outp)
                 t2 = datetime.datetime.now()
                 diff=t2-t1
-                d = diff.total_seconds()/(60)
+                d = diff.total_seconds()
                 print("processed frame", frameid, "at fps", int(1/d))
                 cv2.imshow('PreviewWindow', outp)
                 print('Showing preview. Click on preview window or press any key to stop.')
