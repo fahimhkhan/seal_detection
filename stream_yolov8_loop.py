@@ -1,35 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct 24 00:29:08 2022
+Created on Thu Jul 24 00:29:08 2023
 
 @author: Fahim
 """
 
+# use "pip install opencv-python" for installation
+import cv2
+# use "pip install ultralytics" for installation
 from ultralytics import YOLO
+import time
 
-# Load model
+# Load yolov8 model
 model = YOLO('best_seal.pt')
 
 while True:
     try:
-        import tensorflow as tf
-        # use "pip install opencv-python" for installation
-        import cv2
-
-        from ultralytics import YOLO
-
-        import time
-
-        # Load YOLOv8 model
-        model = YOLO('best_r.pt')
-
+        #input stream
         cap = cv2.VideoCapture("https://stage-ams.srv.axds.co/stream/adaptive/noaa/tmmc_prls/hls.m3u8")
-
-
         ts = time.time()
         frameid = 0
         ret, frame = cap.read()
-        dest = str(ts) + ".avi"
+
+        ##Uncomment for saving as .avi
+        # dest = str(ts) + ".avi"
         # fourcc = cv2.VideoWriter_fourcc(*'XVID')
         # out = cv2.VideoWriter(dest, fourcc, 20.0, (1280, 720))
 
@@ -63,6 +57,7 @@ while True:
                             cv2.putText(img_boxes, label, (x_min, y_max-10), font, 0.5, (0,0,255), 1, cv2.LINE_AA)
                 
                 outp = cv2.resize(img_boxes, (1280, 720))
+                ##Uncomment for saving as .avi
                 # out.write(outp)
                 frameid += 1
                 cv2.imshow('PreviewWindow', img_boxes)
@@ -74,8 +69,10 @@ while True:
                 break
 
         cap.release()
+
+        ##Uncomment for saving as .avi
         # out.release()
+        
         cv2.destroyAllWindows()
     except:
         pass
-
