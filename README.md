@@ -14,7 +14,7 @@ Install the required dependencies
 
 ```pip install -r requirements_tf.txt```
 
-Run the program using one of the following command
+Run the program using one of the following commands
 
 ```python stream_effdet2.py```
 
@@ -32,7 +32,7 @@ Install the required dependencies
 
 ```pip install -r requirements_pt.txt```
 
-Run the program (infinite loop) using the following command
+Run the program using one of the following commands
 
 ```python stream_yolov8```
 
