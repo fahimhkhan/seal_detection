@@ -1,4 +1,0 @@
-tensorflow
-ultralytics
-opencv-python
-numpy
