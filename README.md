@@ -16,11 +16,7 @@ Install the required dependencies
 
 Run the program using one of the following commands
 
-```python stream_effdet2.py```
-
-or
-
-```python stream_effdet3.py```
+```python stream_effdet.py```
 
 or (infinite loop)
 
